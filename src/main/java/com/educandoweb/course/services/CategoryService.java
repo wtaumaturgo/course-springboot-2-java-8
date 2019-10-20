@@ -1,7 +1,7 @@
 package com.educandoweb.course.services;
 
-import com.educandoweb.course.entites.User;
-import com.educandoweb.course.repositories.UserRepository;
+import com.educandoweb.course.entites.Category;
+import com.educandoweb.course.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,17 +9,17 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserService {
+public class CategoryService {
 
     @Autowired
-    private UserRepository repository;
+    private CategoryRepository repository;
 
-    public List<User> findAll(){
+    public List<Category> findAll(){
         return repository.findAll();
     }
 
-    public User findById(Long id){
-        Optional<User> obj = repository.findById(id);
+    public Category findById(Long id){
+        Optional<Category> obj = repository.findById(id);
         return obj.get();
     }
 }
